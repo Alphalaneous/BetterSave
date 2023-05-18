@@ -3,8 +3,8 @@ Backup Geometry Dash Save to the Servers on close
 
 # Installing
 
-Megahack: Place file in the Megahack v6/v7 Extensions folder
-HackerMode, ProxyDLLLoader, and other Adaf DLL loaders, place in the Adaf dll folder
+- Megahack: Place file in the Megahack v6/v7 Extensions folder
+- HackerMode, ProxyDLLLoader, and other Adaf DLL loaders, place in the Adaf dll folder
 
 # Notes
 
