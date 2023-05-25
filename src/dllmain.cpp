@@ -5,6 +5,9 @@
 #pragma warning(pop)
 #include <MinHook.h>
 #include <gd.h>
+#include <chrono>
+#include <thread>
+#include <random>
 
 LONG_PTR oWindowProc;
 bool isClosing = false;
@@ -60,6 +63,14 @@ void __fastcall GJAccountManager_onBackupAccountCompleted_H(gd::GJAccountManager
 
 DWORD WINAPI thread_func(void* hModule) {
     MH_Initialize();
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(100, 2000);
+
+    int random = distr(gen);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(random));
 
     auto base = reinterpret_cast<uintptr_t>(GetModuleHandle(0));
     auto addr = GetProcAddress(GetModuleHandleA("libcocos2d.dll"), "?end@CCDirector@cocos2d@@QAEXXZ");
